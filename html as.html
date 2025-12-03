@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Hacker Uslubidagi Shaxsiy Sayt — Mamarajab Musulmonov</title>
+    <meta name="description" content="Kiberxavfsizlik va dasturlash portfolio. Hacker / terminal estetikasida shaxsiy sayt." />
+
+    <!-- TO‘G‘RI YO‘L: CSS FAYL -->
+    <link rel="stylesheet" href="cssss.css">
+</head>
+
+<body>
+
+    <!-- Matrix canvas (fon) -->
+    <canvas id="matrix" aria-hidden="true"></canvas>
+    <div class="overlay" aria-hidden="true"></div>
+
+    <!-- Header / navigatsiya -->
+    <header>
+        <nav>
+            <div class="logo" data-text="MUSULMONOV">MAMARAJAB</div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero">Bosh sahifa</a></li>
+                <li><a href="#about">Haqida</a></li>
+                <li><a href="#skills">Ko‘nikmalar</a></li>
+                <li><a href="#projects">Loyihalar</a></li>
+                <li><a href="#contact">Aloqa</a></li>
+            </ul>
+
+            <button class="burger" id="burger" aria-label="Menyu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section id="hero" class="section hero">
+        <div class="hero-content container">
+            <h1 class="glitch" data-text="Xush kelibsiz!">Xush kelibsiz!</h1>
+            <p class="typing-text" id="typingText"></p>
+            <p class="lead">Men kiberxavfsizlik va dasturlashga ixtisoslashgan mutaxassisman. Quyida loyihalar va kontaktni ko‘ring.</p>
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="#projects">LOYIHALARIM</a>
+                <a class="btn btn-secondary" href="#contact">ALOQA</a>
+            </div>
+        </div>
+
+        <div class="terminal">
+            <div class="terminal-header">
+                <div class="dots"><i></i><i></i><i></i></div>
+                <div class="term-title">root@cybernet:~#</div>
+            </div>
+            <div class="terminal-body">
+                <div class="command-line">
+                    <span class="green">root@cybernet</span>:<span class="blue">~</span># <span class="blink">█</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2>MEN HAQIMDA</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p><strong>Mamarajab Musulmonov</strong> — kiberxavfsizlik yo'nalishi va dasturlash bo'yicha mutaxassis. C++, Python, JavaScript va Linux asoslari bilan ishlayman.</p>
+                    <p class="note">DIQQAT: Ushbu sayt ta'lim va portfolio maqsadlarida. Ruxsatsiz hujum — jinoyat.</p>
+
+                    <div class="stats">
+                        <div class="stat-item"><div class="stat-number">47</div><div class="stat-label">Loyihalar</div></div>
+                        <div class="stat-item"><div class="stat-number">3</div><div class="stat-label">Yil tajriba</div></div>
+                        <div class="stat-item"><div class="stat-number">24/7</div><div class="stat-label">Onlayn</div></div>
+                    </div>
+                </div>
+
+                <div class="about-image">
+                    <div class="neon-frame">
+                        <img src="ra.jpg" alt="Sizning rasm">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section skills">
+        <div class="container">
+            <h2>KO'NIKMALAR</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Xavfsizlik</h3>
+                    <ul>
+                        <li>Penetratsion testlash</li>
+                        <li>Network security</li>
+                        <li>Vulnerability assessment</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Dasturlash</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>C++</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Tizimlar</h3>
+                    <ul>
+                        <li>Linux</li>
+                        <li>Kriptografiya</li>
+                        <li>Docker</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <h2>LOYIHALAR</h2>
+
+            <div class="projects-grid">
+                <div class="project-card"><h3>Kriptografiya ilovalari</h3><p>Shifrlash vositalari.</p></div>
+                <div class="project-card"><h3>PRNG laboratoriyasi</h3><p>Tasodifiy generatorlarni tekshirish.</p></div>
+                <div class="project-card"><h3>Web xavfsizlik</h3><p>Zaifliklarni aniqlash skriptlari.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2>ALOQA</h2>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p class="alert">DIQQAT: Faqat qonuniy murojaat.</p>
+                    <ul>
+                        <li><strong>Email:</strong> mamarajab@example.com</li>
+                        <li><strong>Telegram:</strong> @Ablax0320</li>
+                        <li><strong>GitHub:</strong> github.com/mamarajab</li>
+                        <li><strong>Telefon:</strong> +998930860320</li>
+                    </ul>
+                </div>
+
+                <form id="contactForm" class="contact-form">
+                    <label>Ismingiz<input type="text" id="name" required></label>
+                    <label>Email<input type="email" id="email" required></label>
+                    <label>Mavzu<input type="text" id="subject" required></label>
+                    <label>Xabar<textarea id="message" rows="5" required></textarea></label>
+                    <button class="btn btn-primary">Yuborish</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Mamarajab Musulmonov</p>
+    </footer>
+
+    <!-- TO‘G‘RI YO‘L: JS FAYL -->
+    <script src="jss.js"></script>
+
+</body>
+</html>
