@@ -1,7 +1,6 @@
-/* ==============================
+/* ------------------------------
    GLOBAL VARIABLES
-================================= */
-
+--------------------------------*/
 :root {
     --bg: #05090a;
     --text: #c8facc;
@@ -13,9 +12,9 @@
 
 /* RESET */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html, body {
@@ -29,7 +28,9 @@ body {
     overflow-x: hidden;
 }
 
-/* BACKGROUND MATRIX CANVAS */
+/* ------------------------------
+   BACKGROUND MATRIX
+--------------------------------*/
 canvas#matrix {
     position: fixed;
     inset: 0;
@@ -44,32 +45,28 @@ canvas#matrix {
     z-index: 0;
 }
 
-/* ==============================
+/* ------------------------------
    HEADER
-================================= */
-
+--------------------------------*/
 header {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    inset: 0 auto auto 0;
     z-index: 10;
 }
 
 nav {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 16px 20px;
+    align-items: center;
+    padding: 14px 28px;
     background: rgba(0,0,0,.45);
-    backdrop-filter: blur(6px);
     border-bottom: 1px solid rgba(0,255,136,.06);
+    backdrop-filter: blur(4px);
 }
 
 .logo {
-    font-size: 22px;
-    font-weight: 700;
     color: var(--accent);
+    font-weight: 700;
     letter-spacing: 2px;
     text-shadow: var(--glow);
     position: relative;
@@ -79,12 +76,11 @@ nav {
     content: attr(data-text);
     position: absolute;
     left: 2px;
-    top: 0;
-    color: #ff0aaa;
     opacity: .12;
+    color: #ff0aaa;
 }
 
-/* NAVIGATION LINKS */
+/* NAVIGATION */
 .nav-links {
     display: flex;
     gap: 20px;
@@ -94,8 +90,8 @@ nav {
 .nav-links a {
     color: var(--muted);
     text-decoration: none;
+    transition: .2s;
     font-weight: 600;
-    transition: .2s ease;
 }
 
 .nav-links a:hover {
@@ -103,72 +99,73 @@ nav {
     text-shadow: var(--glow);
 }
 
-/* BURGER MENU */
+/* BURGER */
 .burger {
     display: none;
-    border: none;
     background: transparent;
+    border: none;
     cursor: pointer;
 }
 
 .burger span {
     display: block;
-    width: 28px;
     height: 3px;
+    width: 26px;
     background: var(--accent);
-    margin: 5px 0;
-    border-radius: 5px;
+    margin: 4px 0;
 }
 
-/* ==============================
+/* ------------------------------
    HERO SECTION
-================================= */
+--------------------------------*/
+.section {
+    padding: 120px 20px;
+}
 
 .hero {
     min-height: 100vh;
-    padding: 140px 20px 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: left;
-    position: relative;
-    z-index: 1;
+    text-align: center;
 }
 
 .hero-content {
-    max-width: 850px;
+    max-width: 900px;
+    margin: auto;
 }
 
 .glitch {
-    font-size: 54px;
-    font-weight: 800;
+    font-size: 48px;
     color: var(--accent);
     text-shadow: var(--glow);
 }
 
 .typing-text {
-    margin-top: 20px;
+    margin-top: 18px;
     font-size: 18px;
     color: var(--muted);
-    line-height: 1.6;
     min-height: 30px;
 }
 
-.hero-actions {
-    margin-top: 25px;
-    display: flex;
-    gap: 14px;
+.lead {
+    margin: 16px 0;
+    color: rgba(200, 250, 204, 0.9);
 }
 
-/* BUTTONS */
+.hero-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+}
 
 .btn {
-    padding: 12px 20px;
-    text-decoration: none;
-    font-weight: 700;
+    padding: 10px 18px;
     border-radius: 8px;
-    border: none;
+    font-weight: 700;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .btn-primary {
@@ -178,19 +175,18 @@ nav {
 
 .btn-secondary {
     background: transparent;
-    border: 1px solid rgba(255,255,255,.1);
     color: var(--text);
+    border: 1px solid rgba(255,255,255,.08);
 }
 
-/* ==============================
+/* ------------------------------
    TERMINAL BOX
-================================= */
-
+--------------------------------*/
 .terminal {
     position: absolute;
-    right: 40px;
     bottom: 40px;
-    width: 340px;
+    left: 40px;
+    width: 360px;
     background: rgba(0,0,0,.7);
     border: 1px solid rgba(0,255,136,.08);
     box-shadow: var(--glow);
@@ -199,9 +195,9 @@ nav {
 
 .terminal-header {
     padding: 8px 12px;
-    background: rgba(0,0,0,.5);
     display: flex;
     gap: 10px;
+    background: rgba(0,0,0,.5);
 }
 
 .dots i {
@@ -210,45 +206,75 @@ nav {
     border-radius: 50%;
 }
 
-.dots i:nth-child(1){ background:#ff5f56; }
-.dots i:nth-child(2){ background:#ffbd2e; }
-.dots i:nth-child(3){ background:#27c93f; }
+.dots i:nth-child(1) { background: #ff5f56; }
+.dots i:nth-child(2) { background: #ffbd2e; }
+.dots i:nth-child(3) { background: #27c93f; }
 
 .terminal-body {
-    padding: 14px;
-    background: black;
-    font-size: 14px;
+    padding: 12px;
+    background: #000;
     color: var(--accent);
 }
 
+/* ------------------------------
+   ABOUT / PROJECTS / CONTACT
+--------------------------------*/
+.about-content {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
 
-/* ==============================
-   RESPONSIVE FIXES (MOBILE)
-================================= */
+.neon-frame {
+    width: 220px;
+    height: 220px;
+    border: 2px solid rgba(0,255,136,.1);
+    box-shadow: 0 0 20px rgba(0,255,136,.08);
+}
 
+.neon-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 30px;
+}
+
+/* ------------------------------
+   RESPONSIVE FIXES
+   (100% Desktop + Mobile Perfect)
+--------------------------------*/
+
+/* TABLET */
 @media (max-width: 900px) {
-
-    /* Hero matn kengaytirildi */
-    .hero {
-        padding: 120px 24px 40px;
+    .about-content {
+        flex-direction: column;
         text-align: center;
     }
 
-    .hero-content {
-        max-width: 100%;
+    .terminal {
+        position:relative;
+        left:auto;
+        bottom:auto;
+        margin:20px auto 0;
+        width:90%;
     }
 
-    /* Terminal joyidan chiqib ketmasin */
-    .terminal {
-        position: relative;
-        margin: 20px auto 0;
-        width: 90%;
-        right: auto;
-        bottom: auto;
+    .contact-grid {
+        grid-template-columns: 1fr;
     }
 }
 
+/* MOBILE */
 @media (max-width: 700px) {
+
+    nav {
+        padding: 14px 20px;
+    }
 
     .nav-links {
         display: none;
@@ -258,16 +284,28 @@ nav {
         display: block;
     }
 
+    .section {
+        padding: 90px 12px;
+    }
+
+    .hero {
+        padding-top: 60px;
+    }
+
     .glitch {
-        font-size: 38px;
+        font-size: 36px;
     }
 
     .typing-text {
         font-size: 16px;
-        padding: 0 6px;
+        padding: 0 4px;
     }
 
-    .hero {
-        padding: 110px 20px;
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .terminal {
+        width: 92%;
     }
 }
