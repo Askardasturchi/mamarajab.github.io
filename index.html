@@ -1,28 +1,24 @@
 <!DOCTYPE html>
 <html lang="uz">
-
 <head>
     <meta name="google-site-verification" content="PuIlt6tGMidOYYBHdiLzX059ZBm9M67M-j0TbtM8CuQ" />
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Hacker Uslubidagi Shaxsiy Sayt — Mamarajab Musulmonov</title>
     <meta name="description" content="Kiberxavfsizlik va dasturlash portfolio. Hacker / terminal estetikasida shaxsiy sayt." />
-
-    <!-- TO‘G‘RI YO‘L: CSS FAYL -->
+    <!-- CSS fayl -->
     <link rel="stylesheet" href="cssss.css">
+    <!-- EmailJS uchun script (kontakt formasi uchun) -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
-
 <body>
-<meta name="google-site-verification" content="PuIlt6tGMidOYYBHdiLzX059ZBm9M67M-j0TbtM8CuQ" />
     <!-- Matrix canvas (fon) -->
     <canvas id="matrix" aria-hidden="true"></canvas>
     <div class="overlay" aria-hidden="true"></div>
-
     <!-- Header / navigatsiya -->
     <header>
         <nav>
             <div class="logo" data-text="MUSULMONOV">MAMARAJAB</div>
-
             <ul class="nav-links" id="navLinks">
                 <li><a href="#hero">Bosh sahifa</a></li>
                 <li><a href="#about">Haqida</a></li>
@@ -30,25 +26,24 @@
                 <li><a href="#projects">Loyihalar</a></li>
                 <li><a href="#contact">Aloqa</a></li>
             </ul>
-
             <button class="burger" id="burger" aria-label="Menyu">
                 <span></span><span></span><span></span>
             </button>
         </nav>
     </header>
-
     <!-- Hero -->
     <section id="hero" class="section hero">
-        <div class="hero-content container">
-            <h1 class="glitch" data-text="Xush kelibsiz!">Xush kelibsiz!</h1>
-            <p class="typing-text" id="typingText"></p>
-            <p class="lead">Men kiberxavfsizlik va dasturlashga ixtisoslashgan mutaxassisman. Quyida loyihalar va kontaktni ko‘ring.</p>
-            <div class="hero-actions">
-                <a class="btn btn-primary" href="#projects">LOYIHALARIM</a>
-                <a class="btn btn-secondary" href="#contact">ALOQA</a>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="glitch" data-text="Xush kelibsiz!">Xush kelibsiz!</h1>
+                <p class="typing-text" id="typingText"></p>
+                <p class="lead">Men kiberxavfsizlik va dasturlashga ixtisoslashgan mutaxassisman. Quyida loyihalar va kontaktni ko‘ring.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#projects">LOYIHALARIM</a>
+                    <a class="btn btn-secondary" href="#contact">ALOQA</a>
+                </div>
             </div>
         </div>
-
         <div class="terminal">
             <div class="terminal-header">
                 <div class="dots"><i></i><i></i><i></i></div>
@@ -61,7 +56,6 @@
             </div>
         </div>
     </section>
-
     <!-- About -->
     <section id="about" class="section about">
         <div class="container">
@@ -70,24 +64,20 @@
                 <div class="about-text">
                     <p><strong>Mamarajab Musulmonov</strong> — kiberxavfsizlik yo'nalishi va dasturlash bo'yicha mutaxassis. C++, Python, JavaScript va Linux asoslari bilan ishlayman.</p>
                     <p class="note">DIQQAT: Ushbu sayt ta'lim va portfolio maqsadlarida. Ruxsatsiz hujum — jinoyat.</p>
-
                     <div class="stats">
                         <div class="stat-item"><div class="stat-number">47</div><div class="stat-label">Loyihalar</div></div>
                         <div class="stat-item"><div class="stat-number">3</div><div class="stat-label">Yil tajriba</div></div>
                         <div class="stat-item"><div class="stat-number">24/7</div><div class="stat-label">Onlayn</div></div>
                     </div>
                 </div>
-
-                 <div class="about-image">
-                        <div class="neon-frame">
-                       
-                            <img src="Mamarajab.png" alt="Mamarajab Musulmonov">
-                        </div>
+                <div class="about-image">
+                    <div class="neon-frame">
+                        <img src="Mamarajab.png" alt="Mamarajab Musulmonov">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Skills -->
     <section id="skills" class="section skills">
         <div class="container">
@@ -101,7 +91,6 @@
                         <li>Vulnerability assessment</li>
                     </ul>
                 </div>
-
                 <div class="skill-category">
                     <h3>Dasturlash</h3>
                     <ul>
@@ -110,7 +99,6 @@
                         <li>JavaScript</li>
                     </ul>
                 </div>
-
                 <div class="skill-category">
                     <h3>Tizimlar</h3>
                     <ul>
@@ -122,12 +110,10 @@
             </div>
         </div>
     </section>
-
     <!-- Projects -->
     <section id="projects" class="section projects">
         <div class="container">
             <h2>LOYIHALAR</h2>
-
             <div class="projects-grid">
                 <div class="project-card"><h3>Kriptografiya ilovalari</h3><p>Shifrlash vositalari.</p></div>
                 <div class="project-card"><h3>PRNG laboratoriyasi</h3><p>Tasodifiy generatorlarni tekshirish.</p></div>
@@ -135,12 +121,10 @@
             </div>
         </div>
     </section>
-
     <!-- Contact -->
     <section id="contact" class="section contact">
         <div class="container">
             <h2>ALOQA</h2>
-
             <div class="contact-grid">
                 <div class="contact-info">
                     <p class="alert">DIQQAT: Faqat qonuniy murojaat.</p>
@@ -151,35 +135,20 @@
                         <li><strong>Telefon:</strong> +998930860320</li>
                     </ul>
                 </div>
-
                 <form id="contactForm" class="contact-form">
                     <label>Ismingiz<input type="text" id="name" required></label>
                     <label>Email<input type="email" id="email" required></label>
                     <label>Mavzu<input type="text" id="subject" required></label>
                     <label>Xabar<textarea id="message" rows="5" required></textarea></label>
-                    <button class="btn btn-primary">Yuborish</button>
+                    <button class="btn btn-primary" type="submit">Yuborish</button>
                 </form>
             </div>
         </div>
     </section>
-
     <footer>
         <p>© 2025 Mamarajab Musulmonov</p>
     </footer>
-
-    <!-- TO‘G‘RI YO‘L: JS FAYL -->
+    <!-- JS fayl -->
     <script src="jss.js"></script>
-
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
