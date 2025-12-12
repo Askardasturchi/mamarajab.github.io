@@ -9,7 +9,6 @@
     let columns = Math.floor(w / fontSize);
     let drops = new Array(columns).fill(0);
     const chars = 'アィウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ$%&*()<>?/|{}[]';
-
     function resize() {
         w = canvas.width = window.innerWidth;
         h = canvas.height = window.innerHeight;
@@ -17,7 +16,6 @@
         drops = new Array(columns).fill(0);
     }
     window.addEventListener('resize', resize);
-
     function draw() {
         // fade old
         ctx.fillStyle = 'rgba(0,0,0,0.06)';
@@ -39,24 +37,12 @@
     // smooth animation
     setInterval(draw, 45);
 })();
-
-/* ===== Kirish tugmasi ===== */
-(function() {
-    const loginBtn = document.getElementById("loginBtn");
-    if (loginBtn) {
-        loginBtn.addEventListener("click", function() {
-            window.open("kirish.html", "_blank", "width=600,height=400");
-        });
-    }
-})();
-
 /* ===== typing effect for hero ===== */
 (function() {
     const el = document.getElementById('typingText');
     if (!el) return;
     const text = "Men Mamarajab Musulmonov — dasturchi va kiberxavfsizlik mutaxassisi. Tizimlarni tahlil qilish, himoya qilish va ishonchli yechimlar yaratish bilan shug'ullanaman.";
     let i = 0;
-
     function step() {
         if (i < text.length) {
             el.textContent += text.charAt(i);
@@ -67,7 +53,6 @@
     // delay so hero renders first
     setTimeout(step, 600);
 })();
-
 /* ===== burger (mobil menyu) ===== */
 (function() {
     const burger = document.getElementById('burger');
@@ -88,14 +73,20 @@
         });
     });
 })();
-
-/* ===== contact form handler (frontend only) ===== */
+/* ===== contact form handler (EmailJS integratsiyasi) ===== */
+// DIQQAT: EmailJS ishlatish uchun https://www.emailjs.com/ da ro'yxatdan o'ting va quyidagi ID larni o'zingiznikiga almashtiring.
+// Public Key: 'YOUR_PUBLIC_KEY'
+// Service ID: 'YOUR_SERVICE_ID'
+// Template ID: 'YOUR_TEMPLATE_ID'
 (function() {
     const form = document.getElementById('contactForm');
     if (!form) return;
+
+    // EmailJS ni ishga tushirish
+    emailjs.init('YOUR_PUBLIC_KEY'); // Bu yerni o'zingizning public key bilan almashtiring
+
     form.addEventListener('submit', function(e) {
         e.preventDefault();
-        // simple frontend validation & UX
         const name = document.getElementById('name').value.trim();
         const email = document.getElementById('email').value.trim();
         const subject = document.getElementById('subject').value.trim();
@@ -104,8 +95,18 @@
             alert('Iltimos, barcha maydonlarni to‘ldiring.');
             return;
         }
-        // As a placeholder we just show a success message.
-        alert('Xabaringiz qabul qilindi — rahmat! Tez orada bog‘lanaman.');
-        form.reset();
+
+        // EmailJS orqali yuborish
+        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+            from_name: name,
+            from_email: email,
+            subject: subject,
+            message: message
+        }).then(function(response) {
+            alert('Xabaringiz muvaffaqiyatli yuborildi! Tez orada bog‘lanaman.');
+            form.reset();
+        }, function(error) {
+            alert('Xatolik yuz berdi: ' + JSON.stringify(error));
+        });
     });
 })();
